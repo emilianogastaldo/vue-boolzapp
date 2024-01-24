@@ -2,6 +2,7 @@
     --header-bgc: #EAEAEA;
     --header-icons: #B1B1B1;
     --notification: #8EDAFC;
+    --chat-input: #F3EEEA;
 }
 
 /* Generics */
@@ -103,12 +104,12 @@ main {
 }
 
 #main-chat {
-    height: calc(100% - 200px);
+    height: calc(100% - 180px);
     background-image: url(../assets/img/mine.jpg);
     overflow: auto;
 }
 
 #input-chat {
-    height: 100px;
-    background-color: lightgreen;
+    height: 80px;
+    background-color: var(--chat-input)
 }
