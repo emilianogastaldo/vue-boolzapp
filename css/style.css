@@ -3,9 +3,9 @@
     --header-icons: #B1B1B1;
     --notification: #8EDAFC;
     --chat-input: #F3EEEA;
+    --sent-message: #D5F9BA;
 }
 
-/* Generics */
 
 /* Controllo le immagini */
 .icon {
@@ -14,6 +14,13 @@
     margin-right: 10px;
 }
 
+/* Stilizzo la data dei messaggi */
+.time {
+    color: gray;
+    font-size: small;
+    text-align: end;
+    margin: 0;
+}
 
 /* Creo una classe per strutturare gli header */
 .my-header {
@@ -112,4 +119,18 @@ main {
 #input-chat {
     height: 80px;
     background-color: var(--chat-input)
+}
+
+/* Creo i messaggi */
+.message {
+    padding: 15px 30px;
+    border-radius: 15px;
+}
+
+.message.sent {
+    background-color: var(--sent-message);
+}
+
+.message.received {
+    background-color: white;
 }
