@@ -30,8 +30,8 @@
                 <div id="sidebar-header">
                     <div id="top-sidebar" class="my-header">
                         <div class="user-info">
-                            <img class="icon" src="assets/img/avatar_io.jpg" alt="">
-                            <span>Nome Utente</span>
+                            <img class="icon" :src="`assets/img/avatar${user.avatar}.jpg`" :alt="user.name">
+                            <span>{{user.name}}</span>
                         </div>
                         <ul class="user-menu nav justify-content-end gap-4">
                             <li class="nav-item"><a href=""><i class="fas fa-circle-notch"></i></a></li>
@@ -53,39 +53,10 @@
                 </div>
                 <div id="sidebar-main">
                     <ul class="contacs-list">
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
-                        <li>sadsadsad</li>
+                        <li v-for="c in contacts" class="user-info py-3">
+                            <img class="icon" :src="`assets/img/avatar${c.avatar}.jpg`" :alt="c.name">
+                            <span>{{c.name}}</span>
+                        </li>
                     </ul>
                 </div>
             </section>
