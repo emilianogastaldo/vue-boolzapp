@@ -1,20 +1,18 @@
 :root {
     --header-bgc: #EAEAEA;
     --header-icons: #B1B1B1;
+    --notification: #8EDAFC;
 }
 
 /* Generics */
 
 /* Controllo le immagini */
-img.icon {
+.icon {
     height: 80px;
     border-radius: 50%;
+    margin-right: 10px;
 }
 
-/* Tolgo lo stile ai link */
-a {
-    text-decoration: none;
-}
 
 /* Creo una classe per strutturare gli header */
 .my-header {
@@ -28,6 +26,7 @@ a {
 /* Classe per custommizzare le icone degli header */
 .my-header a {
     color: var(--header-icons);
+    text-decoration: none;
     font-size: 1.5rem;
 }
 
@@ -48,29 +47,42 @@ main {
     flex-basis: 35%;
     flex-shrink: 0;
     height: 90vh;
-    background-color: red;
 }
 
 /* Creo l'header della sidebar */
-
 #sidebar-header {
-    background-color: green;
     height: 250px;
-}
-
-#sidebar-main {
-    background-color: white;
-    height: calc(100% - 250px);
 }
 
 #top-sidebar {
     height: 100px;
 }
 
+/* Notification section */
 #notification {
     height: 100px;
-    background-color: #8EDAFC;
+    background-color: var(--notification);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+#notification .icon {
+    width: 80px;
+    background-color: white;
+    color: var(--notification);
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Creo il main della sidebar */
+#sidebar-main {
+    background-color: white;
+    height: calc(100% - 250px);
+}
+
 
 .contacs-list {
     background-color: peru;
