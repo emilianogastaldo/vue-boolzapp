@@ -96,17 +96,15 @@ main {
 #chat {
     height: 90vh;
     flex-grow: 1;
-    background-color: blue;
 }
 
 #header-chat {
     height: 100px;
-    background-color: lightblue;
 }
 
 #main-chat {
     height: calc(100% - 200px);
-    background-color: lightcoral;
+    background-image: url(../assets/img/mine.jpg);
     overflow: auto;
 }
 
