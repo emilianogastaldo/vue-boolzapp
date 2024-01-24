@@ -51,3 +51,19 @@ main {
     flex-grow: 1;
     background-color: blue;
 }
+
+#header-chat {
+    height: 100px;
+    background-color: lightblue;
+}
+
+#main-chat {
+    height: calc(100% - 200px);
+    background-color: lightcoral;
+    overflow: auto;
+}
+
+#input-chat {
+    height: 100px;
+    background-color: lightgreen;
+}
