@@ -19,15 +19,16 @@
     <!-- CSS style file -->
     <link rel="stylesheet" href="css/style.css">
     <!-- JS files -->
+    <script src="js/data.js"></script>
     <script defer src="js/script.js"></script>
 </head>
 
 <body>
     <div class="container h-100 d-flex align-items-center">
-        <main>
+        <main id="root">
             <section id="sidebar">
                 <div id="sidebar-header">
-                    <div id="user-info"></div>
+                    <div id="user-info">{{user.name}}</div>
                     <div id="notification"></div>
                     <div id="search-bar">
                         <input type="text" class="w-100">
