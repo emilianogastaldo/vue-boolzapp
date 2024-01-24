@@ -1,4 +1,11 @@
 body {
     background-image: linear-gradient(#009688, #009688 100px, #DCDBD2 0);
     height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    background-color: aliceblue;
+    height: 90%;
 }
