@@ -52,6 +52,7 @@ main {
 /* Creo l'header della sidebar */
 #sidebar-header {
     height: 250px;
+    background-color: #fafafa;
 }
 
 #top-sidebar {
