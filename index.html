@@ -28,7 +28,17 @@
         <main id="root">
             <section id="sidebar">
                 <div id="sidebar-header">
-                    <div id="user-info">{{user.name}}</div>
+                    <div id="top-sidebar" class="my-header">
+                        <div class="user-info">
+                            <img class="icon" src="assets/img/avatar_io.jpg" alt="">
+                            Nome Utente
+                        </div>
+                        <ul class="user-menu nav justify-content-end gap-4">
+                            <li class="nav-item"><a href=""><i class="fas fa-circle-notch"></i></a></li>
+                            <li class="nav-item"><a href=""><i class="fas fa-message"></i></a></li>
+                            <li class="nav-item"><a href=""><i class="fas fa-ellipsis-vertical"></i></a></li>
+                        </ul>
+                    </div>
                     <div id="notification"></div>
                     <div id="search-bar">
                         <input type="text" class="w-100">

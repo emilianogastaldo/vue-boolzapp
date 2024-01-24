@@ -1,17 +1,51 @@
+:root {
+    --header-bgc: #EAEAEA;
+    --header-icons: #B1B1B1;
+}
+
+/* Generics */
+
+/* Controllo le immagini */
+img.icon {
+    height: 80px;
+    border-radius: 50%;
+}
+
+/* Tolgo lo stile ai link */
+a {
+    text-decoration: none;
+}
+
+/* Creo una classe per strutturare gli header */
+.my-header {
+    background-color: var(--header-bgc);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Classe per custommizzare le icone degli header */
+.my-header a {
+    color: var(--header-icons);
+    font-size: 1.5rem;
+}
+
+/* Backgroung del sito */
 body {
     background-image: linear-gradient(#009688, #009688 100px, #DCDBD2 0);
     height: 100vh;
 }
 
+/* Main */
 main {
-    background-color: aliceblue;
     flex-basis: 100%;
     display: flex;
 }
 
 /* Lavoro sulla sidebar dei contatti */
 #sidebar {
-    flex-basis: 30%;
+    flex-basis: 35%;
     flex-shrink: 0;
     height: 90vh;
     background-color: red;
@@ -29,9 +63,8 @@ main {
     height: calc(100% - 250px);
 }
 
-#user-info {
+#top-sidebar {
     height: 100px;
-    background-color: yellow;
 }
 
 #notification {
