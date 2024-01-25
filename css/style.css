@@ -94,10 +94,13 @@ main {
 
 /* Stilizzo la lista degli utenti */
 .contacs-list {
-    padding-top: 20px;
     height: 100%;
     overflow: auto;
     list-style: none;
+}
+
+.contacs-list li:hover {
+    background-color: gray;
 }
 
 /* Lavoro sulla chat */
