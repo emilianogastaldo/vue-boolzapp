@@ -54,7 +54,8 @@
                 <div id="sidebar-main">
                     <!-- Lista dei contatti -->
                     <ul class="contacs-list p-0">
-                        <li role="button" v-for="contact in contacts" :key="contact.id" class="user-info py-3 ps-3">
+                        <li role="button" v-for="contact in contacts" :key="contact.id" class="user-info py-3 ps-3"
+                            @click="setCurrentId(contact.id)">
                             <img class="icon" :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             <span>{{contact.name}}</span>
                         </li>
@@ -78,24 +79,14 @@
                     </div>
                 </div>
                 <div id="main-chat" class="container d-flex flex-column gap-3 p-4">
-                    <!-- <div class="row sent">
+                    <div v-for="message in currentMessages" class="row"
+                        :class="message.status === 'sent' ?  'sent' : 'received' ">
                         <div class="col-5 message">
-                            {{contacts[0].messages[0].text}}
-                            <p class="time">{{contacts[0].messages[1].date}}</p>
+                            {{message.text}}
+                            <p class="time">{{message.date}}</p>
                         </div>
                     </div>
-                    <div class="row sent">
-                        <div class="col-5 message">
-                            {{contacts[0].messages[1].text}}
-                            <p class="time">{{contacts[0].messages[1].date}}</p>
-                        </div>
-                    </div>
-                    <div class="row received">
-                        <div class="col-5 message">
-                            {{contacts[0].messages[2].text}}
-                            <p class="time">{{contacts[0].messages[1].date}}</p>
-                        </div>
-                    </div> -->
+
                 </div>
                 <div id="input-chat" class="d-flex justify-content-evenly align-items-center">
                     <i class="far fa-smile fa-xl text-secondary"></i>

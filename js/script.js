@@ -22,12 +22,15 @@ const app = createApp({
     }),
     computed: {
         currentContact() {
-            return contacts.find(({ id }) => id === currentId);
+            return contacts.find(({ id }) => id === this.currentId);
+        },
+        currentMessages() {
+            return this.currentContact.messages;
         }
     },
     methods: {
         setCurrentId(id) {
-            currentId = id;
+            this.currentId = id;
         }
     }
 });
