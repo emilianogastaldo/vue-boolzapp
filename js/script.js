@@ -18,9 +18,15 @@ const app = createApp({
         user,
         contacts,
         currentId,
+        searchBar: '',
         textMessage: '',
     }),
     computed: {
+        filteredContact() {
+            const search = this.searchBar.toLowerCase()
+            const filtered = this.contacts.filter(contact => contact.name.toLowerCase().includes(search));
+            return filtered;
+        },
         currentContact() {
             return contacts.find(({ id }) => id === this.currentId);
         },

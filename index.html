@@ -48,14 +48,15 @@
                     </div>
                     <div id="search-bar" class="input-group p-2">
                         <button class="input-group-text border.end-0 "><i class="fas fa-search"></i></button>
-                        <input type="text" class="form-control border-start-0" placeholder="Crea o inizia nuova chat">
+                        <input type="text" class="form-control border-start-0" placeholder="Crea o inizia nuova chat"
+                            v-model.trim="searchBar">
                     </div>
                 </div>
                 <div id="sidebar-main">
                     <!-- Lista dei contatti -->
                     <ul class="contacs-list p-0">
-                        <li role="button" v-for="contact in contacts" :key="contact.id" class="user-info py-3 ps-3"
-                            @click="setCurrentId(contact.id), textMessage = ''">
+                        <li role="button" v-for="contact in filteredContact" :key="contact.id"
+                            class="user-info py-3 ps-3" @click="setCurrentId(contact.id), textMessage = ''">
                             <img class="icon" :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             <span>{{contact.name}}</span>
                         </li>
