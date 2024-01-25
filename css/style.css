@@ -127,10 +127,14 @@ main {
     border-radius: 15px;
 }
 
-.message.sent {
+.sent {
+    justify-content: end;
+}
+
+.sent .message {
     background-color: var(--sent-message);
 }
 
-.message.received {
+.received .message {
     background-color: white;
 }

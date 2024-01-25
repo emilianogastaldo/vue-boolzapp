@@ -53,7 +53,7 @@
                 </div>
                 <div id="sidebar-main">
                     <ul class="contacs-list">
-                        <li v-for="c in contacts" class="user-info py-3">
+                        <li v-for="c in contacts" :key="contacts.id" class="user-info py-3">
                             <img class="icon" :src="`assets/img/avatar${c.avatar}.jpg`" :alt="c.name">
                             <span>{{c.name}}</span>
                         </li>
@@ -76,20 +76,20 @@
                     </div>
                 </div>
                 <div id="main-chat" class="container d-flex flex-column gap-3 p-4">
-                    <div class="row flex-row-reverse">
-                        <div class="col-5 mt-auto message sent">
+                    <div class="row sent">
+                        <div class="col-5 message">
                             {{contacts[0].messages[0].text}}
                             <p class="time">{{contacts[0].messages[1].date}}</p>
                         </div>
                     </div>
-                    <div class="row flex-row-reverse">
-                        <div class="col-5 mt-auto message sent">
+                    <div class="row sent">
+                        <div class="col-5 message">
                             {{contacts[0].messages[1].text}}
                             <p class="time">{{contacts[0].messages[1].date}}</p>
                         </div>
                     </div>
-                    <div class="row flex-row">
-                        <div class="col-5 mt-auto message received">
+                    <div class="row received">
+                        <div class="col-5 message">
                             {{contacts[0].messages[2].text}}
                             <p class="time">{{contacts[0].messages[1].date}}</p>
                         </div>
