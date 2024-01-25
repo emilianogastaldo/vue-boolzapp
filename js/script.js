@@ -17,7 +17,8 @@ const app = createApp({
         prova: 'Prova collegamento Vue',
         user,
         contacts,
-        currentId
+        currentId,
+        textMessage: '',
     }),
     computed: {
         currentContact() {
@@ -46,6 +47,19 @@ const app = createApp({
     methods: {
         setCurrentId(id) {
             this.currentId = id;
+        },
+        sentNewMessage(currentMessages) {
+            const newMessage = {
+                id: 3,
+                date: '10/01/2020 15:30:55',
+                text: this.textMessage,
+                status: 'sent'
+            }
+            currentMessages.push(newMessage);
+            this.textMessage = '';
+        },
+        responseMessage(message) {
+            this.set
         }
     }
 });

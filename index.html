@@ -90,7 +90,8 @@
                 </div>
                 <div id="input-chat" class="d-flex justify-content-evenly align-items-center">
                     <i class="far fa-smile fa-xl text-secondary"></i>
-                    <input class="form-control form-control-lg w-75" type="text" placeholder="Scrivi un messaggio">
+                    <input class="form-control form-control-lg w-75" type="text" placeholder="Scrivi un messaggio"
+                        v-model.trim="textMessage" @keyup.enter="sentNewMessage(currentMessages)">
                     <i class="fas fa-microphone fa-xl text-secondary"></i>
                 </div>
             </section>
