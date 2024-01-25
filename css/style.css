@@ -92,6 +92,20 @@ main {
     height: calc(100% - 250px);
 }
 
+
+/* Stilizzo la barra di ricerca */
+#search-bar {
+    position: relative;
+    padding: 5px;
+}
+
+#search-bar i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    translate: 0 -50%;
+}
+
 /* Stilizzo la lista degli utenti */
 .contacs-list {
     height: 100%;
