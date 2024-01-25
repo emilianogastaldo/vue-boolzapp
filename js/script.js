@@ -20,6 +20,16 @@ const app = createApp({
         contacts,
         currentId
     }),
+    computed: {
+        currentContact() {
+            return contacts.find(({ id }) => id === currentId);
+        }
+    },
+    methods: {
+        setCurrentId(id) {
+            currentId = id;
+        }
+    }
 });
 
 app.mount('#root')
