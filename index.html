@@ -53,9 +53,10 @@
                 </div>
                 <div id="sidebar-main">
                     <ul class="contacs-list">
-                        <li v-for="c in contacts" :key="contacts.id" class="user-info py-3">
-                            <img class="icon" :src="`assets/img/avatar${c.avatar}.jpg`" :alt="c.name">
-                            <span>{{c.name}}</span>
+                        <li role="button" v-for="contact in contacts" :key="contact.id" class="user-info py-3"
+                            @click="setCurrentId(contact.id)">
+                            <img class="icon" :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                            <span>{{contact.name}}</span>
                         </li>
                     </ul>
                 </div>
