@@ -55,7 +55,7 @@
                     <!-- Lista dei contatti -->
                     <ul class="contacs-list p-0">
                         <li role="button" v-for="contact in contacts" :key="contact.id" class="user-info py-3 ps-3"
-                            @click="setCurrentId(contact.id)">
+                            @click="setCurrentId(contact.id), textMessage = ''">
                             <img class="icon" :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             <span>{{contact.name}}</span>
                         </li>

@@ -48,7 +48,17 @@ const app = createApp({
         setCurrentId(id) {
             this.currentId = id;
         },
+        responseMessage(currentMessages) {
+            const newMessage = {
+                id: 4,
+                date: '10/01/2020 15:31:55',
+                text: 'ok',
+                status: 'received'
+            }
+            currentMessages.push(newMessage);
+        },
         sentNewMessage(currentMessages) {
+            if (!this.textMessage) return;
             const newMessage = {
                 id: 3,
                 date: '10/01/2020 15:30:55',
@@ -57,10 +67,11 @@ const app = createApp({
             }
             currentMessages.push(newMessage);
             this.textMessage = '';
+
+            setTimeout(() => {
+                this.responseMessage(currentMessages);
+            }, 1000);
         },
-        responseMessage(message) {
-            this.set
-        }
     }
 });
 
