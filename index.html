@@ -64,12 +64,12 @@
             </section>
             <section id="chat">
                 <div id="header-chat" class="my-header">
-                    <div v-for="contact in contacts" :key="contact.id" v-show="currentId === contact.id"
-                        class="d-flex align-items-center">
-                        <img class="icon" :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                    <div class="d-flex align-items-center">
+                        <img class="icon" :src="`assets/img/avatar${currentContact.avatar}.jpg`"
+                            :alt="currentContact.name">
                         <div>
-                            <span>{{contact.name}}</span>
-                            <p class="m-0 text-secondary "> Ultimo accesso alle</p>
+                            <span>{{currentContact.name}}</span>
+                            <p class="m-0 text-secondary "> Ultimo accesso alle {{currentMessages.time}}</p>
                         </div>
                     </div>
                     <div class="user-menu nav justify-content-end gap-4">
