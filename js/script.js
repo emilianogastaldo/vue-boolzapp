@@ -28,25 +28,10 @@ const app = createApp({
             return filtered;
         },
         currentContact() {
-            return contacts.find(({ id }) => id === this.currentId);
+            return this.contacts.find(({ id }) => id === this.currentId);
         },
         currentMessages() {
             return this.currentContact.messages;
-        },
-        lastAccessTime() {
-            let flag = false;
-            let i = this.currentMessages.length - 1;
-            let date;
-            while (!flag || i < 0) {
-                if (this.currentMessages[i].status === 'received') {
-                    date = this.currentMessages[i].date;
-                    flag = true;
-                }
-                i--;
-            }
-            const lastTime = date.split(' ');
-
-            return lastTime[1].slice(0, 5);
         }
 
     },
@@ -54,7 +39,7 @@ const app = createApp({
         setCurrentId(id) {
             this.currentId = id;
         },
-        newMessage(status, text) {
+        createNewMessage(status, text) {
             const newMessage = {
                 id: new Date().getTime(),
                 date: new Date().toLocaleDateString(),
@@ -63,15 +48,15 @@ const app = createApp({
             }
             this.currentMessages.push(newMessage);
         },
-        responseMessage() {
-            const newMessage = {
-                id: 4,
-                date: '10/01/2020 15:31:55',
-                text: 'ok',
-                status: 'received'
-            }
-            this.currentMessages.push(newMessage);
-        },
+        // responseMessage() {
+        //     const newMessage = {
+        //         id: 4,
+        //         date: '10/01/2020 15:31:55',
+        //         text: 'ok',
+        //         status: 'received'
+        //     }
+        //     this.currentMessages.push(newMessage);
+        // },
         sendNewMessage() {
             if (!this.textMessage) return;
             // const newMessage = {
@@ -81,16 +66,17 @@ const app = createApp({
             //     status: 'sent'
             // }
             // this.currentMessages.push(newMessage);
-            this.newMessage('sent', this.textMessage);
-            this.textMessage = '';
+            this.createNewMessage('sent', this.textMessage);
 
             setTimeout(() => {
-                this.newMessage('received', 'ok');
+                this.createNewMessage('received', 'ok');
             }, 1000);
+            this.textMessage = '';
         },
         deleteMessage(id) {
-            console.log('ciao')
-            this.currentMessages = this.currentMessages.filter(message => message.id !== id);
+            // A quanto se uso il metodo leggo solo, invece se metto direttamente l'oggetto in questione
+            // posso modificarlo?!
+            this.currentContact.messages = this.currentMessages.filter(message => message.id !== id);
         }
     },
     created() {
