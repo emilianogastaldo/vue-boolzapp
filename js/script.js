@@ -3,10 +3,10 @@ console.log(Vue);
 const { user, contacts } = data;
 // Trovo l'id più piccolo
 
-let currentId = Infinity;
-contacts.forEach(({ id }) => {
-    if (currentId > id) currentId = id
-});
+// let currentId = Infinity;
+// contacts.forEach(({ id }) => {
+//     if (currentId > id) currentId = id
+// });
 
 
 const { createApp } = Vue;
@@ -17,7 +17,7 @@ const app = createApp({
         prova: 'Prova collegamento Vue',
         user,
         contacts,
-        currentId,
+        currentId: null,
         searchBar: '',
         textMessage: '',
     }),
@@ -72,12 +72,19 @@ const app = createApp({
                 status: 'sent'
             }
             currentMessages.push(newMessage);
-            this.textMessage = '';
+            // this.textMessage = '';
 
             setTimeout(() => {
                 this.responseMessage(currentMessages);
             }, 1000);
         },
+        deleteMessage(currentMessages, id) {
+            console.log('ciao')
+            currentMessages = currentMessages.filter(message => message.id !== id);
+        }
+    },
+    created() {
+        this.currentId = this.contacts[0].id;
     }
 });
 
