@@ -74,6 +74,7 @@
                         <div>
                             <span>{{currentContact.name}}</span>
                             <p class="m-0 text-secondary "> Ultimo accesso alle {{lastAccessTime}}</p>
+
                         </div>
                     </div>
                     <div class="user-menu nav justify-content-end gap-4">
@@ -83,8 +84,7 @@
                     </div>
                 </div>
                 <div id="main-chat" class="container d-flex flex-column gap-3 p-4">
-                    <div v-for="message in currentMessages" class="row"
-                        :class="message.status === 'sent' ?  'sent' : 'received' ">
+                    <div v-for="message in currentMessages" class="row" :class="message.status">
                         <div class="col-5 message">
                             {{message.text}}
                             <div v-if="message.status === 'sent'">
@@ -92,7 +92,8 @@
                                     data-bs-toggle="dropdown"></i>
                                 <ul class="dropdown-menu">
                                     <li role="button" class="dropdown-item">Message info</li>
-                                    <li role="button" class="dropdown-item">Delete Message</li>
+                                    <li role="button" class="dropdown-item"
+                                        @click="deleteMessage(currentMessages, message.id)">Delete Message</li>
                                 </ul>
                             </div>
                             <p class="time">{{message.date}}</p>
