@@ -54,6 +54,15 @@ const app = createApp({
         setCurrentId(id) {
             this.currentId = id;
         },
+        newMessage(status, text) {
+            const newMessage = {
+                id: new Date().getTime(),
+                date: new Date().toLocaleDateString(),
+                text,
+                status
+            }
+            this.currentMessages.push(newMessage);
+        },
         responseMessage() {
             const newMessage = {
                 id: 4,
@@ -65,22 +74,23 @@ const app = createApp({
         },
         sendNewMessage() {
             if (!this.textMessage) return;
-            const newMessage = {
-                id: new Date().getTime(),
-                date: new Date().toLocaleDateString(),
-                text: this.textMessage,
-                status: 'sent'
-            }
-            this.currentMessages.push(newMessage);
+            // const newMessage = {
+            //     id: new Date().getTime(),
+            //     date: new Date().toLocaleDateString(),
+            //     text: this.textMessage,
+            //     status: 'sent'
+            // }
+            // this.currentMessages.push(newMessage);
+            this.newMessage('sent', this.textMessage);
             this.textMessage = '';
 
             setTimeout(() => {
-                this.responseMessage();
+                this.newMessage('received', 'ok');
             }, 1000);
         },
-        deleteMessage(currentMessages, id) {
+        deleteMessage(id) {
             console.log('ciao')
-            currentMessages = currentMessages.filter(message => message.id !== id);
+            this.currentMessages = this.currentMessages.filter(message => message.id !== id);
         }
     },
     created() {
