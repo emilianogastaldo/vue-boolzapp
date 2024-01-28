@@ -61,7 +61,10 @@
                         <li role="button" v-for="contact in filteredContact" :key="contact.id"
                             class="user-info py-3 ps-3" @click="setCurrentId(contact.id), textMessage = ''">
                             <img class="icon" :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
-                            <span>{{contact.name}}</span>
+                            <div>
+                                <p>{{contact.name}}</p>
+                                <p class="text-secondary font-small">{{getLastMessage(contact.messages)}}</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -96,7 +99,7 @@
                                         Message</li>
                                 </ul>
                             </div>
-                            <p class="time">{{standardizeTimeString(message.date)}}</p>
+                            <p class="time text-secondary font-small">{{standardizeTimeString(message.date)}}</p>
                         </div>
                     </div>
                 </div>

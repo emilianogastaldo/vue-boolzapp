@@ -6,6 +6,14 @@
     --sent-message: #D5F9BA;
 }
 
+/* Generics */
+p {
+    margin: 0;
+}
+
+.font-small {
+    font-size: small;
+}
 
 /* Controllo le immagini */
 .icon {
@@ -16,10 +24,7 @@
 
 /* Stilizzo la data dei messaggi */
 .time {
-    color: gray;
-    font-size: small;
     text-align: end;
-    margin: 0;
 }
 
 /* Creo una classe per strutturare gli header */
@@ -92,7 +97,6 @@ main {
     height: calc(100% - 250px);
 }
 
-
 /* Stilizzo la barra di ricerca */
 #search-bar {
     position: relative;
@@ -111,6 +115,11 @@ main {
     height: 100%;
     overflow: auto;
     list-style: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
 }
 
 .contacs-list li:hover {

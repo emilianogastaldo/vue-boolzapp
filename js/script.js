@@ -55,6 +55,21 @@ const app = createApp({
             };
             return text
         },
+        getLastMessage(chat) {
+            let text = '';
+            let i = chat.length - 1;
+            let flag = true;
+            // trovo l'ultimo messaggio inviato
+            while (i > 0 && flag) {
+                // estrapolo l'ultimo messaggio inviato
+                if (chat[i].status === 'received') {
+                    text = chat[i].text
+                    flag = false
+                };
+                i--;
+            };
+            return text;
+        },
         getTime(chat) {
             // date che ritorno
             let date = '';
