@@ -42,11 +42,26 @@ const app = createApp({
         createNewMessage(status, text) {
             const newMessage = {
                 id: new Date().getTime(),
-                date: new Date().toLocaleDateString(),
+                date: new Date().toLocaleString(),
                 text,
                 status
             }
             this.currentMessages.push(newMessage);
+        },
+        getTime(chat) {
+            // date che ritorno
+            let date = '';
+            console.log(chat);
+            console.log(chat.length);
+            // trovo l'ultimo messaggio inviato
+            for (let i = 0; i < chat.length; i++) {
+                // estrapolo l'ultimo messaggio inviato
+                if (chat[i].status === 'received') date = chat[i].date
+                console.log(chat[i].status, chat[i].date)
+            };
+            // ritorno la stringa
+            console.log('ultima data ricevuta', date);
+
         },
         // responseMessage() {
         //     const newMessage = {
