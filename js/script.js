@@ -48,20 +48,29 @@ const app = createApp({
             }
             this.currentMessages.push(newMessage);
         },
+        standardizeTimeString(text) {
+            // cerco di standardizzare la stringa
+            if (text.includes(',')) {
+                text = text.split(',').join(' ');
+            };
+            return text
+        },
         getTime(chat) {
             // date che ritorno
             let date = '';
-            console.log(chat);
-            console.log(chat.length);
+            let i = chat.length - 1;
+            let flag = true;
             // trovo l'ultimo messaggio inviato
-            for (let i = 0; i < chat.length; i++) {
+            while (i > 0 && flag) {
                 // estrapolo l'ultimo messaggio inviato
-                if (chat[i].status === 'received') date = chat[i].date
-                console.log(chat[i].status, chat[i].date)
+                if (chat[i].status === 'received') {
+                    date = chat[i].date
+                    flag = false
+                };
+                i--;
             };
             // ritorno la stringa
-            console.log('ultima data ricevuta', date);
-
+            return this.standardizeTimeString(date);
         },
         // responseMessage() {
         //     const newMessage = {
